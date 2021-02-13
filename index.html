@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=1">
+	<title>Moto Game</title>
+	<style>*{margin: 0;}</style>
+</head>
+<body>
+	
+	<script src="index.js"></script>
+	<center>
+		<!-- <button onclick="moveup()">UP</button>
+		<button onclick="movedown()">DOWN</button>
+		<button onclick="moveleft()">LEFT</button>
+		<button onClick="moveright()">RIGHT</button> -->
+		<button value="Refresh Page" onClick="window.location.reload();">Перезагрузить</button>
+	</center>
+	<script>
+		window.addEventListener("keydown", checkKeyPress, false)
+
+function checkKeyPress(key){
+	if (key.keyCode == "65"){
+		alert("hello")
+	}
+}
+	</script>
+</body>
+</html>
