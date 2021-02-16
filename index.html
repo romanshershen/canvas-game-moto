@@ -3,27 +3,90 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=1">
+	<script src="https://kit.fontawesome.com/a076d05399.js"></script>
 	<title>Moto Game</title>
-	<style>*{margin: 0;}</style>
+	<style>*{margin: 0;}
+	body{
+		position: relative;
+		overflow: hidden;
+	}
+	i {
+    border: solid black;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+}
+button{
+	width: 50px;
+	height: 50px;
+	padding: 0 2px;
+	background: transparent;
+	border: none;
+	outline: none;
+}
+.right {
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+}
+
+.left {
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+}
+
+.up {
+    transform: rotate(-135deg);
+    -webkit-transform: rotate(-135deg);
+}
+
+.down {
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+}
+.rotup{
+	position: absolute;
+	top: 50%;
+	left: 0;
+}
+.rotdown{
+	position: absolute;
+	top: 50%;
+	right: 0;
+}
+
+	</style>
 </head>
 <body>
 	
 	<script src="index.js"></script>
-	<center>
-		<!-- <button onclick="moveup()">UP</button>
-		<button onclick="movedown()">DOWN</button>
-		<button onclick="moveleft()">LEFT</button>
-		<button onClick="moveright()">RIGHT</button> -->
-		<button value="Refresh Page" onClick="window.location.reload();">Перезагрузить</button>
-	</center>
-	<script>
-		window.addEventListener("keydown", checkKeyPress, false)
 
-function checkKeyPress(key){
-	if (key.keyCode == "65"){
-		alert("hello")
-	}
-}
-	</script>
+	<center>
+		<button class="forward" ontouchstart="move();">MOVE</button>
+		<button class="backward" ontouchstart="movedownBack();" ontouchend="moveupBack();">STOP</button> 
+		<button class="rotup" ontouchstart="movedownleft();" ontouchend="moveupleft();" ><div style="position: absolute;
+			top: calc(50% - 30px);
+			left: calc(50% );
+			width: 60px;
+			height: 60px;
+			border: 2px solid rgb(255, 255, 255);
+			border-radius: 10px;
+			box-sizing: border-box;
+			opacity: 0.25;
+			will-change: opacity;
+		}"><div style="position: absolute; top: calc(50% - 9px); left: calc(50% - 11px); width: 22px; height: 18px; background-image: url(00a7e92cbdac1c30d8e13460d27109df.png); background-size: cover; transform: rotate(360deg);"></div></div></button>
+		<button class="rotdown" ontouchstart="movedownright();" ontouchend="moveupright();"><div style="position: absolute;
+			top: calc(50% - 30px);
+			left: calc(50% - 60px);
+			width: 60px;
+			height: 60px;
+			border: 2px solid rgb(255, 255, 255);
+			border-radius: 10px;
+			box-sizing: border-box;
+			opacity: 0.25;
+			will-change: opacity;
+		}"><div style="position: absolute; top: calc(50% - 9px); left: calc(50% - 11px); width: 22px; height: 18px; background-image: url(00a7e92cbdac1c30d8e13460d27109df.png); background-size: cover; transform: rotate(180deg);"></div></div></button>
+		<input type="button" value="Refresh Page" onClick="window.location.reload();">
+	</center>
+	
 </body>
 </html>
